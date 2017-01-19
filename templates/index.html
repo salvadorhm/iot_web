@@ -1,6 +1,6 @@
 $def with (data, control, form)
 
-<h1>Arduino Control y Lectura</h1>
+<h1>Arduino IoT</h1>
 
 <h3>Control de un Led</h3>
 
@@ -17,8 +17,23 @@ $def with (data, control, form)
 
 <h3>Lectura de un sensor</h3>
 
+<script type="text/javascript">
+window.onload = startInterval;
+function startInterval() {
+    setInterval("startTime();",1000);
+}
+
+function startTime() {
+    var now = new Date();
+    document.getElementById('time').innerHTML = now.getHours() + ":" + now.getMinutes() + ":" +now.getSeconds();
+}
+</script>
+
+<div id='time'>
+</div>
+
 <div id='data'>
 $for value in data:
-    Valor del sensor: <b>$value.value</b>
+    Valor del sensor: <b>$value.value</b> actualizado: <b>$value.update_time</b>  
 </div>
 
