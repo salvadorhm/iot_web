@@ -9,7 +9,9 @@ app = web.application(urls, globals())
 render = web.template.render('templates', base='base')
 
 class Index:
-    db = web.database(dbn='mysql', host='localhost', db='arduino', user='root', pw='toor')
+    # mysql -h mwgmw3rs78pvwk4e.cbetxkdyhwsb.us-east-1.rds.amazonaws.com -u q90qvjb7s2nymv1n -p v3wr2g9jgzddiyzw
+    #db = web.database(dbn='mysql', host='localhost', db='arduino', user='root', pw='toor')
+    db = web.database(dbn='mysql', host='mwgmw3rs78pvwk4e.cbetxkdyhwsb.us-east-1.rds.amazonaws.com', db='v3wr2g9jgzddiyzw', user='q90qvjb7s2nymv1n', pw='v3wr2g9jgzddiyzw')
     control = form.Form(
         form.Button("Encender/Apagar", type="submit", description="Encender/Apagar")
     )
