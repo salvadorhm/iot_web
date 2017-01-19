@@ -18,7 +18,7 @@ class Index:
    
     def GET(self):
         f = self.control()
-        data = self.db.select('data', order='id DESC', limit=1)
+        data = self.db.select('data', order='id DESC', limit=1)[0]
         control = self.db.select('control', order='id DESC', limit=1)[0]
         return render.index(data, control, f)
     
